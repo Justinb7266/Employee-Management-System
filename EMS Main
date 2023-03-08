@@ -1,0 +1,27 @@
+#EMS Project - Adding 2 functions to add employees continuously or display all
+employee_data_1 = []
+
+index = 0 #creates index for variables in list
+
+#loop to keep EMS running continuously
+while True:
+    emp_input = str(input("Add Employee Enter 1.\nView All Employees Enter 2:"))
+    if emp_input == "1":
+        employeeName = str(input('Employee Name: '))
+        employeeSSN = str(input('Employee SSN: '))
+        employeePhone = str(input('Employee Phone Number: '))
+        employeeEmail = str(input('Employee Email: '))
+        employeeSalary = str(input('Employee Salary: '))
+        employeeSalary = ("$" + employeeSalary)
+        #creates the line to be appended in the system
+        line = employeeName,employeeSSN,employeePhone,employeeEmail,employeeSalary
+        #appending line
+        employee_data_1.append(line)
+        #moves the index forward by one every entry (could be useful to print each employee individually)
+        index = index + 1
+        print("There are",len(employee_data_1),"employee(s) currently in the system.")
+    elif emp_input == "2":
+        print(employee_data_1)
+    else:
+        print("Error: Please Enter a Valid Option")
+        #anything entered besides a 1 or 2 will output an error message and start over
